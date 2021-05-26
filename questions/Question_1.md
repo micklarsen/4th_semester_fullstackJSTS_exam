@@ -86,6 +86,7 @@ test();
 ```
 
 **- Example(s) that demonstrate how to implement our own promise-solutions.**
+**- Example(s) that demonstrate error handling with promises**
 
 ```javascript
 // Home made promise
@@ -120,17 +121,23 @@ myPromise("Nummer 1", 2000)
   .finally(() => console.log(results.join(", ")));
 ```
 
-**- Example(s) that demonstrate error handling with promises**
 
 <br>
 
 ---
 
-Explain shortly about GraphQL, its purpose and some of its use cases
+**Explain shortly about GraphQL, its purpose and some of its use cases**
+- Effective, query language that prevents under- and over fetching
+- A single endpoint is called
+- Can be used as stand-alone API or to "Collect" multiple REST api's in one GraphQL endpoint.
 
-What is meant by the terms **over- and under-fetching** in GraphQL, compared to REST
+**What is meant by the terms **over- and under-fetching** in GraphQL, compared to REST**
+Over- and underfetching is getting too much or too little data from a fetch (Typically GET) request.  
+In REST this means performing more requests when under fetching or recieving too much in repsonse when over fetching. 
+This issue is solved with GraphQL where we can specify exactly what we want.
 
-Provide examples demonstrating **data fetching with GraphQL**. You should provide examples both running in a Sandbox/playground and examples executed in an Apollo Client
+
+**Provide examples demonstrating **data fetching with GraphQL**. You should provide examples both running in a Sandbox/playground and examples executed in an Apollo Client**
 
 <br>
 
