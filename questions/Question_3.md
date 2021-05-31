@@ -113,6 +113,8 @@ asd
 
 **Demonstrate and highlight important parts of a “complete” GraphQL-application using Express and MongoDB on the server-side, and Apollo-Client on the client.**
 
+`C:\Users\Mick\Documents\Datamatiker\4. Semester\Fullstack Javascript\Period 3\Week 2\apollov2`
+
 Complete example with the [fullstack startcode](https://github.com/micklarsen/FullstackTS_Startcode) as the server, and the [Apollo server](https://github.com/micklarsen/4sem_fullstack_js_ts/tree/main/Period%203/Week%202/apollov2) as a React frontend. 
 
 **BACKEND**

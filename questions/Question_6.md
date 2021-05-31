@@ -1,7 +1,7 @@
 # 6
 
-Explain about promises in JavaScript including, the problems they solve, a quick explanation of the Promise API and:
-- Example(s) that demonstrate how to execute asynchronous (promise-based) code in serial or parallel  
+**Explain about promises in JavaScript including, the problems they solve, a quick explanation of the Promise API and:**
+**- Example(s) that demonstrate how to execute asynchronous (promise-based) code in serial or parallel**  
 
 ```javascript
 function wait(waitTime) {
@@ -100,16 +100,16 @@ myPromise("Nummer 1", 2000)
 ```
 
 
-Explain about JavaScripts async/await, how it relates to promises and reasons to use it compared to the plain promise API.  
-Provide examples to demonstrate 
-- Why this often is the preferred way of handling promises
-- Error handling with async/await  
-- Serial or parallel execution with async/await.
+**Explain about JavaScripts async/await, how it relates to promises and reasons to use it compared to the plain promise API.**
+**Provide examples to demonstrate**
+**- Why this often is the preferred way of handling promises**  
+**- Error handling with async/await**  
+**- Serial or parallel execution with async/await.**  
 
 ---
 
 
-Provide a number of GraphQL examples demonstrating; creating, updating and deleting with Mutations. You should provide examples both running in a Sandbox/playground and examples executed in an Apollo Client.  
+**Provide a number of GraphQL examples demonstrating; creating, updating and deleting with Mutations. You should provide examples both running in a Sandbox/playground and examples executed in an Apollo Client.**
 
 In an Apollo-based React Component, demonstrate how to perform GraphQL Queries,  including:
 - Explain the purpose of ApolloClient and the ApolloProvider component

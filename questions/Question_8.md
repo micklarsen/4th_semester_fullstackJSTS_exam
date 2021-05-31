@@ -7,7 +7,7 @@
 - Nock for HTTP Server mocking to catch outgoing requests and return a defined mock response.
 
 **Explain, using a sufficient example, how to mock and test endpoints that relies on data fetched from external endpoints**  
-asd
+Startcode test
 
 **Explain, using a sufficient example a strategy for how to test a REST API. If your system includes authentication and roles explain how you test this part.**  
 asd
@@ -18,10 +18,10 @@ asd
 asd
 
 **Explain and demonstrate basic Geo-JSON, involving as a minimum, Points and Polygons**
-asd
+`C:\Users\Mick\Documents\Datamatiker\4. Semester\Fullstack Javascript\Period 4\geo-start-noDB`
 
 **Explain and demonstrate a GraphQL API that implements geo-features, using a relevant geo-library and plain JavaScript**
-asd
+Startcode and `C:\Users\Mick\Documents\Datamatiker\4. Semester\Fullstack Javascript\Period 4\geo-start-noDB`
 
 **If you have time: Explain and demonstrate a GraphQL API that implements geo-features, using Mongodb’s geospatial queries and indexes**  
 asd

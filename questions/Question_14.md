@@ -42,10 +42,38 @@ returnClosure();
 ```
 
 **Provide examples to demonstrate the benefits of using TypeScript, including, types, interfaces, classes and generics**  
-asd
+- Code completion
+- "Static typing" i modsætning til dynamisk. Det gør at koden bl.a. kan opdate fejl ved det her:
 
-**Explain how we can get typescript code-completion for external imports.**
-asd
+```typescript
+function addFive(num) {
+    return num + 5
+}
+//Giver fejl hvis vi prøver at bruge en string som argument
+function addFive(num: number) {
+    return num + 5
+}
+```
+- Interfaces (Se startkode)
+- Generics (Se eksempel)
+```
+function getArray<T>(items : T[] ) : T[] {
+    return new Array<T>().concat(items);
+}
+
+let myNumArr = getArray<number>([100, 200, 300]);
+let myStrArr = getArray<string>(["Hello", "World"]);
+
+myNumArr.push(400); // OK
+myStrArr.push("Hello TypeScript"); // OK
+
+myNumArr.push("Hi"); // Compiler Error
+myStrArr.push(500); // Compiler Error
+```
+
+**Explain how we can get typescript code-completion for external imports.**  
+Check package.json! 
+@types/node-fetch
 
 ---
 

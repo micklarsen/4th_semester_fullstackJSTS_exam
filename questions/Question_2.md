@@ -1,10 +1,10 @@
 # 2
 
-Explain some **Pros & Cons** in using Node.js + Express to implement your Backend compared to a strategy using, for example, **Java/JAX-RS/Tomcat**
+**Explain some **Pros & Cons** in using Node.js + Express to implement your Backend compared to a strategy using, for example, **Java/JAX-RS/Tomcat**
 
-- We can keep the stack to one programming language
-- Way less architecture, dependencies, syntaxes etc.
-- Easy way to deploy PWA and even desktop applications with electron.js
+**- We can keep the stack to one programming language**  
+**- Way less architecture, dependencies, syntaxes etc.**  
+**- Easy way to deploy PWA and even desktop applications with electron.js**  
 
 **Explain, using relevant examples, the Express concept; middleware.**  
 Middleware in express takes incoming requests, does something to them and passes them on to the next middleware in the chain before returning the request.

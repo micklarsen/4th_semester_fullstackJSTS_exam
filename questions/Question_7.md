@@ -8,18 +8,19 @@
 - Environment: NodeJS powered by V8 with without the DOM and more. (Install packages with npm)
 
 **Explain a setup for Express/Node/Test/Mongo-DB/GraphQL development with Typescript, and how it handles "secret values",  debug, debug-outputs, application logging and testing.**  
-asd
+Check the start code.  
 
 **Demonstrate a system using application logging and environment controlled debug statements**  
-ads
+Check the start code.
 
 ---
 
 **Explain and demonstrate a GraphQL API that implements geo-features, using Mongodb’s geospatial queries and indexes.**  
-asd
+`C:\Users\Mick\Documents\Datamatiker\4. Semester\Fullstack Javascript\Period 4\geo-start-noDB`  
+
 
 **Explain and demonstrate how you have tested the geo-related features in you start code**  
-asd
+STARTCODE
 
 **IF, and ONLY IF, you have added a React Native frontend, feel free to skip the test-question, and  demonstrate your app-code instead**
 asd

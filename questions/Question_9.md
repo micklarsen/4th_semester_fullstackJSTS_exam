@@ -56,15 +56,42 @@ setTimeout(() => {
 ```
 
 **Provide examples to demonstrate the benefits of using TypeScript, including, types, interfaces, classes and generics**  
-asd
+- Code completion
+- "Static typing" i modsætning til dynamisk. Det gør at koden bl.a. kan opdate fejl ved det her:
+
+```typescript
+function addFive(num) {
+    return num + 5
+}
+//Giver fejl hvis vi prøver at bruge en string som argument
+function addFive(num: number) {
+    return num + 5
+}
+```
+- Interfaces (Se startkode)
+- Generics (Se eksempel)
+```
+function getArray<T>(items : T[] ) : T[] {
+    return new Array<T>().concat(items);
+}
+
+let myNumArr = getArray<number>([100, 200, 300]);
+let myStrArr = getArray<string>(["Hello", "World"]);
+
+myNumArr.push(400); // OK
+myStrArr.push("Hello TypeScript"); // OK
+
+myNumArr.push("Hi"); // Compiler Error
+myStrArr.push(500); // Compiler Error
+```
 
 ---
 
 **Demonstrate, using your own code samples, how to perform all CRUD operations on a MongoDB**
-asd
+STARTCODE
 
 **Explain, using relevant examples, concepts related to testing a REST-API using Node/JavaScript/Typescript + relevant packages**
-ads
+STARTCODE
 
 **Explain, using relevant examples, the Express concept; middleware.**  
 Middleware in express takes incoming requests, does something to them and passes them on to the next middleware in the chain before returning the request.

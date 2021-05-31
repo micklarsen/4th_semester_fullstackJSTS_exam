@@ -106,13 +106,67 @@ myPromise("Nummer 1", 2000)
 **- Error handling with async/await**
 **- Serial or parallel execution with async/await.**
 
+
+```javascript
+/* PROMISE ERROR HANDLING */
+const makeRequest = () => {
+  try {
+    getJSON()
+      .then(result => {
+        // this parse may fail
+        const data = JSON.parse(result)
+        console.log(data)
+      })
+      // uncomment this block to handle asynchronous errors
+      // .catch((err) => {
+      //   console.log(err)
+      // })
+  } catch (err) {
+    console.log(err)
+  }
+```
+
+```javascript
+// Home made promise
+
+const myPromise = (txt, delay) =>
+  new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      const err = true;
+      if (err) {
+        return reject(new Error("Feeeejl"));
+      }
+      resolve("Hello " + txt);
+    }, delay);
+  });
+
+const results = [];
+
+myPromise("Nummer 1", 2000)
+  .then((msg) => {
+    results.push(msg);
+    // throw new Error("Feeejl") //Simuler fejl med throw
+    return myPromise("Nummer 2", 1000);
+  })
+  .then((msg) => {
+    results.push(msg);
+    return myPromise("Nummer 3", 500);
+  })
+  .then((msg) => results.push(msg))
+  .catch((e) => {
+    console.log("In catch " + e);
+  })
+  .finally(() => console.log(results.join(", ")));
+```
+
 ---
 
 **Explain and demonstrate ways to create Geo-JSON test data**  
-asd
+geojson.io
 
 **Explain the typical order of longitude and latitude used by Server-Side APIs and Client-Side APIs**  
-asd
+longitude, latitude, elevation  
+Check this [Chart](https://macwright.com/lonlat/)
 
 **Explain and demonstrate a GraphQL API that implements geo-features, using Mongodb’s geospatial queries and indexes.**  
 asd
