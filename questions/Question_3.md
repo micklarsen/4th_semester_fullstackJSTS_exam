@@ -34,8 +34,7 @@ console.log(someValue);
 const EventEmitter = require("events");
 
 class DOS_Detector extends EventEmitter {
-  constructor(timeValue) {
-    // Threshold
+  constructor(timeValue) { // Threshold
     super();
     this.urls = new Map();
     this.TIME_BETWEEN_CALLS = timeValue;

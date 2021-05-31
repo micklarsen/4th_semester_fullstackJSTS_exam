@@ -1,48 +1,38 @@
-const EventEmitter = require("events");
-
-class DOS_Detector extends EventEmitter {
-    constructor(timeValue) {
-        // Threshold
-        super();
-        this.urls = new Map();
-        this.TIME_BETWEEN_CALLS = timeValue;
-    }
-    addUrl = (url) => {
-        const time = new Date().getTime();
-        if (this.urls.has(url)) {
-            const deltaTime = time - this.urls.get(url);
-            if (deltaTime < this.TIME_BETWEEN_CALLS) {
-                // First string is what the eventlistener is listening for - they have to match!
-                this.emit("DOS Detected", { url: url, timeBetweenCalls: deltaTime });
-            }
-        }
-        this.urls.set(url, time);
-    };
+function wait(waitTime) {
+    return new Promise((resolve) =>
+        setTimeout(() => {
+            console.log(`Waited for: ${waitTime} ms`);
+            resolve();
+        }, waitTime)
+    );
 }
-module.exports.DosDetector = DOS_Detector;
 
+async function serial() {
+    console.time("--serial--");
+    try {
+        await wait(1000);
+        await wait(1000);
+/*         if (true) {
+            throw new Error("Hovsa!");
+        } */
+        await wait(1000);
+    } catch (err) {
+        console.log(err);
+    }
 
+    console.timeEnd("--serial--");
+}
 
+async function parallel() {
+    console.time("--parallel--");
+    await Promise.all([wait(1000), wait(1000), wait(1000)]);
+    console.timeEnd("--parallel--");
+}
 
-const DosDetector  = DOS_Detector; //Simulated import
-const ddosDetector = new DosDetector(2000); // Call the constructor on the new obj.
+async function test() {
+    await serial();
+    console.log("");
+    await parallel();
+}
 
-ddosDetector.on("DOS Detected", (arg) => {
-    //This string is what the listener is listetning for!
-    // Eventlistener with callback
-    console.log("Plausible DDOS attack detected", arg);
-});
-
-ddosDetector.addUrl("url1");
-ddosDetector.addUrl("url2");
-ddosDetector.addUrl("url3");
-
-//Simulate requests for same URL within short time period
-setTimeout(() => {
-    ddosDetector.addUrl("url1");
-    ddosDetector.addUrl("url3");
-}, 1000);
-
-// Output
-// Plausible DDOS attack detected { url: 'url1', timeBetweenCalls: 1003 }
-// Plausible DDOS attack detected { url: 'url3', timeBetweenCalls: 1003 }
+test();

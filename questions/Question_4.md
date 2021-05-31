@@ -1,7 +1,10 @@
 # 4
 
 **Explain, generally, what is meant by a **NoSQL** database.**  
-asd
+
+- Ikke relationel database, dvs. ingen rows/columns
+- Ingen fastlagte column regler
+- Kan være document style m. json ligesom MongoDB
 
 **Demonstrate, using either a REST-API (or a GraphQL-API), designed by you, how to perform all CRUD operations on a MongoDB**  
 asd

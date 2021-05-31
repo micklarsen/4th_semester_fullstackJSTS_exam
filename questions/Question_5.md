@@ -13,6 +13,33 @@ Explain the two strategies for improving JavaScript: **Babel** and ES6 (es2015) 
 ---
 
 Explain, using relevant examples, the Express concept; **middleware**.  
+Middleware in express takes incoming requests, does something to them and passes them on to the next middleware in the chain before returning the request.
+
+```javascript
+app.use(function (req, res, next) {
+  req.foo = "bar";
+  next();
+});
+```
+
+In this example "bar" is added to req.foo and next() is called and the request is sent on.
+
+Instead of "Foo" the function could handle logging, authentication, cors and much more.  
+In this example, we use a logger to log when the facade is initialized and
+
+```javascript
+// Initialize facade using the database set on the application object
+router.use(async (req, res, next) => {
+  if (!facade) {
+    const db = req.app.get("db");
+    req.app
+      .get("logger")
+      .log("info", `Database used: ${req.app.get("db-type")}`);
+    facade = new FriendFacade(db);
+  }
+  next();
+});
+```
 
 Explain the purpose of **mocha**, **chai**, **supertest** and **nock** (feel free to combine with the next question)  
 
