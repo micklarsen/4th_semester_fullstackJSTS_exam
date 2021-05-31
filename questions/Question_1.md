@@ -166,6 +166,18 @@ This issue is solved with GraphQL where we can specify exactly what we want.
 
 **Provide examples demonstrating **data fetching with GraphQL**. You should provide examples both running in a Sandbox/playground and examples executed in an Apollo Client**
 
+Standard
+```graphql
+query{
+  getAllFriends {
+    firstName,
+    lastName
+  }
+}
+```
+
+Se Lynda startkode mht. apollo klienten. 
+
 <br>
 
 OR

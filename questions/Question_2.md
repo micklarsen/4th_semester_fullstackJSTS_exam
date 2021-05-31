@@ -40,10 +40,75 @@ Check the start code.
 
 <br>
 
-Explain shortly about GraphQL, its purpose and some of its use cases
+**Explain shortly about GraphQL, its purpose and some of its use cases**  
+asd
 
-Explain shortly about GraphQL’s type system and some of the benefits we get from this
+**Explain shortly about GraphQL’s type system and some of the benefits we get from this**  
+GraphQL is a strongly typed language. Type System defines various data types that can be used in a GraphQL application. 
 
-Explain shortly about GraphQL Schema Definition Language, and provide examples of schemas you have defined
+```graphql
+    type Query {
+        getFriend(id: ID): Friend
+        allFriends : [Friend]!
+    }
+```
+Mutation Entry point for data manipulation ( post, put ).
+```graphgl
+    type Mutation {
+        createFriend(input: FriendInput): Friend
+        updateFriend(input: FriendInput): Friend
+        deleteFriend(id: ID!): String
+    }
+```
+```graphgl
+Enum Useful in a situation where you need the user to pick from a prescribed list of options ( Gender ).
 
-Provide a number of examples demonstrating; creating, updating and deleting with Mutations. You should provide examples both running in a Sandbox/playground and examples executed in an Apollo Client.
+    enum Gender {
+        MALE
+        FEMALE
+        OTHER
+    }
+```
+
+**Explain shortly about GraphQL Schema Definition Language, and provide examples of schemas you have defined**  
+```graphql
+    type Friend {
+        id: ID
+        firstName: String
+        lastName: String
+        email: String
+        role: String
+    }
+     type Query {
+        getAllFriends : [Friend]!
+        getAllFriendsProxy: [Friend]!
+        getFriendByEmail(input: String): Friend
+        getFriendById(input: String): Friend
+    }
+    input FriendInput {
+        firstName: String!
+        lastName: String!
+        password: String!
+        email: String!
+    }
+    type Mutation {
+        createFriend(input: FriendInput): Friend
+        updateFriend(email: String, input: FriendEditInput): Friend
+        deleteFriend(id: ID!): String
+    }
+```
+
+**Provide a number of examples demonstrating; creating, updating and deleting with Mutations. You should provide examples both running in a Sandbox/playground and examples executed in an Apollo Client.**  
+- GraphQL startes i app.ts
+- Se schema.ts
+- Se resolver.ts
+- Apollo client i Lynda
+- Apollo client forbindes til REACT med apolloprovider component og wrapper vores react app. Så skal vi ikke smide props med rundt
+
+Klienten ser sådan ud: 
+```javascript
+client = new ApolloClient({
+    link: authLink.concat(httpLink),
+    cache: new InMemoryCache()
+  })
+```

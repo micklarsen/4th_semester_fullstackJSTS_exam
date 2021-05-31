@@ -7,7 +7,29 @@
 - Kan være document style m. json ligesom MongoDB
 
 **Demonstrate, using either a REST-API (or a GraphQL-API), designed by you, how to perform all CRUD operations on a MongoDB**  
-asd
+
+These operations are demonstrated in the fullstack startcode.  
+All requests to the "Friend" API goes through the route first, then the facade.
+
+- Link to [Routes code](https://github.com/micklarsen/FullstackTS_Startcode/blob/main/src/routes/FriendRoutesAuth.ts)
+- Link to [Facade code](https://github.com/micklarsen/FullstackTS_Startcode/blob/main/src/facades/friendFacade.ts)
+
+
+CREATE query
+
+```graphql
+mutation{
+  createFriend(input:{
+    firstName:"Kim",
+    lastName:"Larsen",
+    email:"lange@bro.dk",
+    password:"secret"
+  })
+  {id email}
+}
+```
+
+
 
 **Explain a setup for Express/Node/Test/Mongo-DB/GraphQL development with Typescript. Focus on how it uses Mongo-DB (how secret values are handled, how connections (production or test) are passed on to relevant places in code, and if use, how authentication and authorization is handled**  
 Check the start code.

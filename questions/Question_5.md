@@ -41,7 +41,11 @@ router.use(async (req, res, next) => {
 });
 ```
 
-Explain the purpose of **mocha**, **chai**, **supertest** and **nock** (feel free to combine with the next question)  
+**Explain the purpose of **mocha**, **chai**, **supertest** and **nock** (feel free to combine with the next question**
+- Mocha as a test framework for running tests
+- Chai as a library for assertions
+- Supertest to test HTTP assertions and requests. Supertest will even start a test server for you!
+- Nock for HTTP Server mocking to catch outgoing requests and return a defined mock response.
 
 Explain, using relevant examples, your strategy for implementing a **REST-API with Node/Express  + TypeScript** and demonstrate how you have **tested the API**
 

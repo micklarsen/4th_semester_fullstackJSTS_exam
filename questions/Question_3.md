@@ -77,9 +77,54 @@ setTimeout(() => {
 ```
 
 **Provide examples to demonstrate the benefits of using TypeScript, including, types, interfaces, classes and generics**  
-Do it live 
+- Code completion
+- "Static typing" i modsætning til dynamisk. Det gør at koden bl.a. kan opdate fejl ved det her:
+
+```typescript
+function addFive(num) {
+    return num + 5
+}
+//Giver fejl hvis vi prøver at bruge en string som argument
+function addFive(num: number) {
+    return num + 5
+}
+```
+- Interfaces (Se startkode)
+- Generics (Se eksempel)
+```
+function getArray<T>(items : T[] ) : T[] {
+    return new Array<T>().concat(items);
+}
+
+let myNumArr = getArray<number>([100, 200, 300]);
+let myStrArr = getArray<string>(["Hello", "World"]);
+
+myNumArr.push(400); // OK
+myStrArr.push("Hello TypeScript"); // OK
+
+myNumArr.push("Hi"); // Compiler Error
+myStrArr.push(500); // Compiler Error
+```
 
 ---
 
-Explain shortly about GraphQL, its purpose and some of its use cases
-Demonstrate and highlight important parts of a “complete” GraphQL-application using Express and MongoDB on the server-side, and Apollo-Client on the client.
+**Explain shortly about GraphQL, its purpose and some of its use cases**  
+asd
+
+**Demonstrate and highlight important parts of a “complete” GraphQL-application using Express and MongoDB on the server-side, and Apollo-Client on the client.**
+
+Complete example with the [fullstack startcode](https://github.com/micklarsen/FullstackTS_Startcode) as the server, and the [Apollo server](https://github.com/micklarsen/4sem_fullstack_js_ts/tree/main/Period%203/Week%202/apollov2) as a React frontend. 
+
+**BACKEND**
+The most important parts of the backend is: 
+- To import and integrate express with relevant middleware such as auth, debugging, etc. 
+- Setup and configure a server to run everything. In the startcode the server is started in www.ts.
+- Setup a facade for communicating with a database such as MongoDB
+- Setup routes as API endpoints 
+- Setup GraphQL schemas and resolvers to simplify and improve the API
+
+**FRONTEND**
+- Setup app.tsx that should contain routes and the apolloprovider & client to handle setup caching.
+- Setup html/css for routes and build forms for interacting with an API using components.
+- Integrate authentification by using localStorage.
+
