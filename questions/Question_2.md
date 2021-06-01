@@ -1,6 +1,6 @@
 # 2
 
-**Explain some **Pros & Cons** in using Node.js + Express to implement your Backend compared to a strategy using, for example, **Java/JAX-RS/Tomcat**
+**Explain some Pros & Cons in using Node.js + Express to implement your Backend compared to a strategy using, for example, Java/JAX-RS/Tomcat**
 
 **- We can keep the stack to one programming language**  
 **- Way less architecture, dependencies, syntaxes etc.**  
